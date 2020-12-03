@@ -4,11 +4,17 @@
 
 $config['mail'] = array(
 
-	// 管理画面から管理者へ
+	// システムから管理者へ
 	'management_to_admin' => array(
-		'from'		=> 'info@chuoh-kyouiku.co.jp',
-		'from_name'	=> 'ICT資料請求フォーム 管理画面',
-		'to'		=> 's-kamei@chuoh-kyouiku.co.jp;kamekame0712@gmail.com'
+		'from'		=> 'kouhou@chuoh-kyouiku.co.jp',
+		'from_name'	=> 'ICTツール資料申込管理',
+		'to'		=> 's-kamei@chuoh-kyouiku.co.jp'
+	),
+
+	// システムからお客様へ
+	'management_to_customer' => array(
+		'from'		=> 'kouhou@chuoh-kyouiku.co.jp',
+		'from_name'	=> 'ICTツール資料請求フォーム'
 	),
 
 );

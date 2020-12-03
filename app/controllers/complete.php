@@ -72,8 +72,10 @@ class Complete extends MY_Controller
 		$error_flg = FALSE;
 		if( $this->m_apply->insert($insert_data) ) {
 			// メール送信
+			$questionnaire = $know == '' ? '' : $this->conf['know'][$know] . ( $know == '9' ? ( '（' . $other . '）' ) : '' );
+
 			$mail_data = array(
-				'type'			=> $type,
+				'type'			=> $this->conf['form_type'][$type],
 				'juku_name'		=> $juku_name,
 				'contact_name'	=> $contact_name,
 				'position'		=> $position,
@@ -81,10 +83,23 @@ class Complete extends MY_Controller
 				'address'		=> $this->conf['pref'][$pref] . $addr1 . $addr2,
 				'tel'			=> $tel,
 				'email'			=> $email,
-				'know'			=> $this->conf['know'][$know] . ( $know == '9' ? ( '（' . $other . '）' ) : '' )
+				'know'			=> $questionnaire
 			);
-			$mail_body = $this->load->view('mail/tmpl_apply_comp_to_admin', $mail_data, TRUE);
 
+			// お客様宛
+			$mail_body = $this->load->view('mail/tmpl_apply_comp_to_customer', $mail_data, TRUE);
+			$params = array(
+				'from'		=> $this->conf_mail['management_to_customer']['from'],
+				'from_name'	=> $this->conf_mail['management_to_customer']['from_name'],
+				'to'		=> $email,
+				'subject'	=> 'ICTツールの資料をご請求いただき、ありがとうございます。',
+				'message'	=> $mail_body
+			);
+
+			$this->m_mail->send($params);
+
+			// 社内宛
+			$mail_body = $this->load->view('mail/tmpl_apply_comp_to_admin', $mail_data, TRUE);
 			$params = array(
 				'from'		=> $this->conf_mail['management_to_admin']['from'],
 				'from_name'	=> $this->conf_mail['management_to_admin']['from_name'],

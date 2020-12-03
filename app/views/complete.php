@@ -17,7 +17,7 @@
 				<li class="current">送信完了</li>
 			</ul>
 
-			<h2 class="main-message">資料をご請求いただき、ありがとうございます。</h2>
+			<img src="<?= base_url('img/message2.png') ?>" alt="資料をご請求いただき、ありがとうございます" class="main-message">
 			<p class="thanks">
 				資料の準備が整い次第、送付させていただきます。<br>
 				ご請求いただきました資料について担当営業からご連絡させていただくことがございます。<br>

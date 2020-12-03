@@ -56,6 +56,12 @@ $config['disp'] = array(
 		'47'	=> '沖縄県'
 	),
 
+	'form_type' => array(
+		'1'		=> 'FORM1',
+		'2'		=> 'FORM2',
+		'3'		=> 'FORM3'
+	),
+
 	'know' => array(
 		'1'		=> '教材受取時',
 		'2'		=> '当社営業訪問時',

@@ -11,7 +11,7 @@
 				</div>
 			</div> <!-- end of .row -->
 
-			<h2 class="main-message">資料請求フォームのご利用ありがとうございます。</h2>
+			<img src="<?= base_url('img/message1.png') ?>" alt="資料請求フォームのご利用ありがとうございます" class="main-message">
 			<p class="thanks">
 				当社パンフレットをご覧いただき、当フォームへアクセスいただき、ありがとうございます。<br>
 				以下の資料請求フォームから、パンフレット掲載商品に関する資料を無料でお取り寄せいただけます。<br>
@@ -165,7 +165,7 @@
 
 				<div class="row form-item">
 					<div class="col-md-4">
-						<div class="question">いつ当冊子のことを知りましたか？<span>必須</span></div>
+						<div class="question">いつ当冊子のことを知りましたか？</div>
 					</div>
 
 					<div class="col-md-8">

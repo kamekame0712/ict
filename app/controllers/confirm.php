@@ -26,24 +26,9 @@ class Confirm extends MY_Controller
 
 		$post_data = $this->input->post();
 		$type = isset($post_data['type']) ? $post_data['type'] : '1';
-		$know = isset($post_data['know']) ? $post_data['know'] : '';
-
-		$this->form_validation->set_rules('juku_name', '貴塾名', 'required');
-		$this->form_validation->set_rules('contact_name', 'お名前', 'required');
-		$this->form_validation->set_rules('zip', '郵便番号', 'required');
-		$this->form_validation->set_rules('pref', '都道府県', 'required');
-		$this->form_validation->set_rules('addr1', '住所（市区郡以下、番地まで）', 'required');
-		$this->form_validation->set_rules('addr2', '住所（建物名・部屋番号）', 'required');
-		$this->form_validation->set_rules('tel', '電話番号', 'required');
-		$this->form_validation->set_rules('email', 'Eメールアドレス', 'required|valid_email');
-		$this->form_validation->set_rules('know', 'アンケート', 'required');
-
-		if( $know == '9' ) {
-			$this->form_validation->set_rules('other', '詳細', 'required');
-		}
 
 		// バリデーションチェック
-		if( $this->form_validation->run() == FALSE ) {
+		if( $this->form_validation->run('apply') == FALSE ) {
 			$view_data = array(
 				'type'	=> $type,
 				'CONF'	=> $this->conf,

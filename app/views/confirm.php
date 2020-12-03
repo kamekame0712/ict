@@ -96,9 +96,11 @@
 				</div>
 
 				<div class="col-md-8">
-					<?= $CONF['know'][$PDATA['know']] ?>
-					<?php if( $PDATA['know'] == '9' ): ?>
-						<br><br><?= nl2br($PDATA['other']) ?>
+					<?php if( !empty($PDATA['know']) ): ?>
+						<?= $CONF['know'][$PDATA['know']] ?>
+						<?php if( $PDATA['know'] == '9' ): ?>
+							<br><br><?= nl2br($PDATA['other']) ?>
+						<?php endif; ?>
 					<?php endif; ?>
 				</div>
 			</div> <!-- end of .row -->

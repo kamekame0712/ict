@@ -90,8 +90,16 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 |--------------------------------------------------------------------------
 */
 // サイトタイトル
-const SITE_NAME				= 'ICTツールお問合せ';
+const SITE_NAME				= 'ICTツール資料請求';
 
 // CSSやJSの変更を正しく反映させるためキャッシュをクリアする必要があるときに変更
 const CACHES_CLEAR_VERSION	= '20200918_1';
 
+// ページネーション ページあたりのデータ件数
+const RECORD_PER_PAGE		= 25;
+
+// ページネーション カレントページ前のページ最大数
+const MAX_BEFORE_CURRENT	= 2;
+
+// ページネーション カレントページ後のページ最大数
+const MAX_AFTER_CURRENT		= 3;

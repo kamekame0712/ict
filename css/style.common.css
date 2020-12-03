@@ -77,9 +77,9 @@ footer img {
 
 /* #region メイン */
 .main-message {
-    font-size: 2.0rem;
-    font-weight: bold;
-    margin: 20px 0;
+    display: block;
+    margin: 20px auto;
+    max-width: 620px;
 }
 
 hr {
@@ -99,9 +99,9 @@ ul.breadcrumb-list {
 
 ul.breadcrumb-list li {
     text-align: center;
-    width: calc(33% - 7px);
-    height: 30px;
-    line-height: 30px;
+    width: calc(33% - 12px);
+    height: 44px;
+    line-height: 44px;
     font-size: 1.4rem;
     position: relative;
     background-color: #E6E6E4;
@@ -120,26 +120,27 @@ ul.breadcrumb-list li:nth-child(2)::after {
     display: block;
     width: 0;
     height: 0;
-    border-top: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid #E6E6E4;
+    border-top: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 22px solid #E6E6E4;
     position: absolute;
     top: 0;
-    right: -30px;
+    right: -44px;
 }
 
 ul.breadcrumb-list li.current::after {
-    border-left: 15px solid #E01C26;
+    border-left: 22px solid #E01C26;
 }
 
 .attention-message {
     border: 2px solid #E01C26;
     color: #E01C26;
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
     margin: 30px 0 15px;
+    padding: 5px 0;
 }
 
 .belt-message {
@@ -228,12 +229,7 @@ ul.breadcrumb-list li.current::after {
     text-align: center;
 }
 
-
 @media screen and (max-width : 768px) {
-    .main-message {
-        font-size: 1.7rem;
-    }
-
     .attention-message {
         font-size: 1.7rem;
     }
