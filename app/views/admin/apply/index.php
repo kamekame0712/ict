@@ -146,7 +146,8 @@
 						<?php elseif( !empty($ADATA) ): ?>
 							<div class="row">
 								<div class="col-12">
-									<div class="card card-success">
+									<p id="reload_request" style="display:none;">ページをリロードしてください。</p>
+									<div class="card card-success" id="search_result">
 										<?php echo form_open('admin/apply/proc', array('id' => 'frm_proc')); ?>
 											<div class="card-body">
 												<div class="page-box">

@@ -41,8 +41,9 @@ function do_proc()
 		})
 		.done( function(ret, textStatus, jqXHR) {
 			if( ret['status'] ) {
+				$('#search_result').hide();
+				$('#reload_request').show();
 				location.href = ret['file_url'];
-				location.reload();
 			}
 			else {
 				show_error_notification(ret['err_msg']);

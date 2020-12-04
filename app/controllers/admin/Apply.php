@@ -182,7 +182,7 @@ class Apply extends MY_Controller
 
 			foreach( $apply_ids as $apply_id ) {
 				$apply_data = $this->m_apply->get_one(array('apply_id' => $apply_id));
-				if( !empty($apply_data) ) {
+				if( !empty($apply_data) && $apply_data['flg_processed'] == '1' ) {
 					$dl_apply[] = $apply_data;
 					$param = get_url_param();
 
