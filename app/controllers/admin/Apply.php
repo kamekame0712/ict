@@ -187,7 +187,7 @@ class Apply extends MY_Controller
 					$param = get_url_param();
 
 					// メール送信
-					$url = site_url('consult') . '/' . $param;
+					$url = site_url('consult/form') . '/' . $param;
 					$mail_data = array(
 						'juku_name'		=> $apply_data['juku_name'],
 						'position'		=> $apply_data['position'],
