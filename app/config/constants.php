@@ -103,3 +103,6 @@ const MAX_BEFORE_CURRENT	= 2;
 
 // ページネーション カレントページ後のページ最大数
 const MAX_AFTER_CURRENT		= 3;
+
+// ファイルダウンロード用のワークフォルダ
+const WK_FOLDER_PATH		= 'C:/product/ict/wk/';

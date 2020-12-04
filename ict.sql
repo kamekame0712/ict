@@ -25,6 +25,7 @@ CREATE TABLE `t_apply` (
   `know` varchar(1) NOT NULL COMMENT 'いつ知ったか',
   `other` varchar(128) DEFAULT NULL COMMENT 'その他の詳細',
   `flg_processed` varchar(1) DEFAULT '1' COMMENT '処理済みフラグ 1:未処理 8:キャンセル 9:処理済み',
+  `param` varchar(32) DEFAULT NULL COMMENT '問い合わせパラメーター',
   `regist_time` datetime NOT NULL COMMENT '登録日',
   `update_time` datetime NOT NULL COMMENT '更新日',
   `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
