@@ -33,6 +33,27 @@ CREATE TABLE `t_apply` (
   PRIMARY KEY (apply_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_consult` (
+  `consult_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `apply_id` int(7) NOT NULL COMMENT 't_applyのID',
+  `type` varchar(1) NOT NULL COMMENT 'フォーム番号',
+  `product` varchar(2) NOT NULL COMMENT '商品番号',
+  `other_product` varchar(128) DEFAULT NULL COMMENT '手入力の商品名',
+  `substance` varchar(1) NOT NULL COMMENT 'ご相談内容',
+  `hope_date` varchar(1) NOT NULL COMMENT 'ご相談日程',
+  `other_hope_date` varchar(64) DEFAULT NULL COMMENT '手入力のご相談日程',
+  `hope_time` varchar(64) DEFAULT NULL COMMENT 'ご希望時間',
+  `method` varchar(1) NOT NULL COMMENT 'ご相談方法',
+  `note` text COMMENT 'その他',
+  `of_link` varchar(1) DEFAULT '1' COMMENT 'OF管理との連携 1:未 2:済',
+  `flg_handle` varchar(1) DEFAULT '1' COMMENT '対応 1:未 2:OF管理 3:対応済 4:対応しない 5:キャンセル',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (consult_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 INSERT INTO `t_admin` (`admin_id`, `email`, `password`, `name`, `regist_time`, `update_time`, `status`) VALUES

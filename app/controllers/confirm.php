@@ -10,9 +10,6 @@ class Confirm extends MY_Controller
 		$this->config->load('config_disp', TRUE, TRUE);
 		$this->conf = $this->config->item('disp', 'config_disp');
 
-		// ヘルパーロード
-		$this->load->helper('cookie');
-
 		// バリデーションエラー設定
 		$this->form_validation->set_error_delimiters('<p class="error-msg">', '</p>');
 	}

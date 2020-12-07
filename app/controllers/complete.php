@@ -16,9 +16,6 @@ class Complete extends MY_Controller
 
 		$this->config->load('config_mail', TRUE, TRUE);
 		$this->conf_mail = $this->config->item('mail', 'config_mail');
-
-		// ヘルパーロード
-		$this->load->helper('cookie');
 	}
 
 	public function index()
