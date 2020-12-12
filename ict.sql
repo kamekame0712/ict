@@ -37,6 +37,7 @@ CREATE TABLE `t_consult` (
   `consult_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `apply_id` int(7) NOT NULL COMMENT 't_applyのID',
   `type` varchar(1) NOT NULL COMMENT 'フォーム番号',
+  `juku_name` varchar(128) NOT NULL COMMENT '塾名',
   `product` varchar(2) NOT NULL COMMENT '商品番号',
   `other_product` varchar(128) DEFAULT NULL COMMENT '手入力の商品名',
   `substance` varchar(1) NOT NULL COMMENT 'ご相談内容',

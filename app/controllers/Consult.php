@@ -114,6 +114,7 @@ class Consult extends MY_Controller
 		$insert_data = array(
 			'apply_id'			=> $apply_id,
 			'type'				=> $type,
+			'juku_name'			=> $apply_data['juku_name'],
 			'product'			=> $product,
 			'other_product'		=> $other_product,
 			'substance'			=> $substance,

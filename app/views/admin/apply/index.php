@@ -1,4 +1,4 @@
-<?php $this->load->view('inc/admin/_head', array('TITLE' => '管理者管理 | ' . SITE_NAME)); ?>
+<?php $this->load->view('inc/admin/_head', array('TITLE' => '資料請求管理 | ' . SITE_NAME)); ?>
 
 <body>
 	<div id="app">

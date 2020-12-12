@@ -136,12 +136,70 @@ class Apply extends MY_Controller
 
 	public function detail($apply_id = '')
 	{
-		echo '詳細ページ';
+		// ログイン済みチェック
+		if( !$this->chk_logged_in_admin() ) {
+			redirect('admin');
+			return;
+		}
+
+		$apply_data = $this->m_apply->get_one(array('apply_id' => $apply_id));
+
+		$view_data = array(
+			'CONF'			=> $this->conf,
+			'ADATA'			=> $apply_data
+		);
+
+		$this->load->view('admin/apply/detail', $view_data);
 	}
 
 	public function dl($apply_id = '')
 	{
-		echo '単独の請求データダウンロード';
+		// ログイン済みチェック
+		if( !$this->chk_logged_in_admin() ) {
+			redirect('admin');
+			return;
+		}
+
+		$apply_data = $this->m_apply->get_one(array('apply_id' => $apply_id));
+
+		// タイムアウトさせない
+		set_time_limit(0);
+
+		$fp = fopen('php://output', 'w');
+		stream_filter_append($fp, 'convert.iconv.UTF-8/CP932', STREAM_FILTER_WRITE);
+
+		header("Content-Type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=" . '資料請求' . date('YmdHis') . '.csv');
+
+		if( empty($apply_data) ) {
+			fputs($fp, 'no data');
+		}
+		else {
+			$other = $apply_data['other'];
+			$other = str_replace("\r\n", "__", $other);
+			$other = str_replace("\r", "__", $other);
+			$other = str_replace("\n", "__", $other);
+
+			$csv_array = array(
+				$apply_data['apply_id'],
+				$apply_data['type'],
+				$this->conf['form_type'][$apply_data['type']],
+				$apply_data['juku_name'],
+				$apply_data['contact_name'],
+				$apply_data['position'],
+				$apply_data['zip'],
+				$this->conf['pref'][$apply_data['pref']] . $apply_data['addr1'],
+				$apply_data['addr2'],
+				$apply_data['tel'],
+				$apply_data['email'],
+				$this->conf['know'][$apply_data['know']],
+				$other,
+				$apply_data['regist_time']
+			);
+			fputcsv($fp, $csv_array);
+		}
+
+		fclose($fp);
 	}
 
 
@@ -222,9 +280,6 @@ class Apply extends MY_Controller
 				$file_fullname = WK_FOLDER_PATH . $file_name;
 				$fp = fopen('php://temp/maxmemory:5242880', 'w');
 
-				$csv_str = '"apply_id","type","juku_name","contact_name","position","zip","pref","addr1","addr2","tel","email","know","other","flg_processed","param","regist_time"';
-				fwrite($fp, mb_convert_encoding($csv_str, 'SJIS', 'UTF-8') . "\r\n");
-
 				foreach( $dl_apply as $apply_data ) {
 					$other = $apply_data['other'];
 					$other = str_replace("\r\n", "__", $other);
@@ -234,19 +289,17 @@ class Apply extends MY_Controller
 					$csv_str = '"' .
 						$apply_data['apply_id'] . '","' .
 						$apply_data['type'] . '","' .
+						$this->conf['form_type'][$apply_data['type']] . '","' .
 						$apply_data['juku_name'] . '","' .
 						$apply_data['contact_name'] . '","' .
 						$apply_data['position'] . '","' .
 						$apply_data['zip'] . '","' .
-						$apply_data['pref'] . '","' .
-						$apply_data['addr1'] . '","' .
+						$this->conf['pref'][$apply_data['pref']] . $apply_data['addr1'] . '","' .
 						$apply_data['addr2'] . '","' .
 						$apply_data['tel'] . '","' .
 						$apply_data['email'] . '","' .
-						$apply_data['know'] . '","' .
+						$this->conf['know'][$apply_data['know']] . '","' .
 						$other . '","' .
-						$apply_data['flg_processed'] . '","' .
-						$apply_data['param'] . '","' .
 						$apply_data['regist_time'] . '"';
 
 					fwrite($fp, mb_convert_encoding($csv_str, 'SJIS', 'UTF-8') . "\r\n");

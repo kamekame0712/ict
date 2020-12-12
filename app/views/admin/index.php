@@ -29,10 +29,18 @@
 													<tr>
 														<td><a href="<?= site_url('admin/apply') ?>"><i class="fas fa-book-open"></i>&nbsp;資料請求管理</a></td>
 														<td>
-															資料請求の確認が行えます。<br>
+															資料請求フォームからの依頼の確認が行えます。<br>
 															また、B2の伝票データ等のダウンロードも行えます。
 														</td>
 													</tr>
+
+													<tr>
+														<td><a href="<?= site_url('admin/consult') ?>"><i class="fas fa-comments"></i>&nbsp;無料相談管理</a></td>
+														<td>
+															無料相談フォームからの依頼の確認が行えます。
+														</td>
+													</tr>
+
 													<tr>
 														<td><a href="<?= site_url('admin/manage') ?>"><i class="fas fa-user-tie"></i>&nbsp;管理者管理</a></td>
 														<td>

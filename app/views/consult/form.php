@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-12 px-0 px-md-4">
 					<div class="header">
-						<img src="<?= base_url('img/top' . $ADATA['type'] . '.png') ?>" alt="TOP">
+						<img src="<?= base_url('img/consult' . $ADATA['type'] . '.png') ?>" alt="TOP">
 					</div>
 				</div>
 			</div> <!-- end of .row -->
