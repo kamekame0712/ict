@@ -58,9 +58,11 @@
 										<tr>
 											<th>いつ知ったか</th>
 											<td>
-												<?= $CONF['know'][$ADATA['know']] ?>
-												<?php if( $ADATA['know'] == '9' && !empty($ADATA['other']) ): ?>
-													<?= $ADATA['other'] ?>
+												<?php if( !empty($ADATA['know']) ): ?>
+													<?= $CONF['know'][$ADATA['know']] ?>
+													<?php if( $ADATA['know'] == '9' && !empty($ADATA['other']) ): ?>
+														<?= $ADATA['other'] ?>
+													<?php endif; ?>
 												<?php endif; ?>
 											</td>
 										</tr>

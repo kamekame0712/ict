@@ -179,6 +179,7 @@ class Apply extends MY_Controller
 			$other = str_replace("\r\n", "__", $other);
 			$other = str_replace("\r", "__", $other);
 			$other = str_replace("\n", "__", $other);
+			$know = !empty($apply_data['know']) ? $this->conf['know'][$apply_data['know']] : '';
 
 			$csv_array = array(
 				$apply_data['apply_id'],
@@ -192,7 +193,7 @@ class Apply extends MY_Controller
 				$apply_data['addr2'],
 				$apply_data['tel'],
 				$apply_data['email'],
-				$this->conf['know'][$apply_data['know']],
+				$know,
 				$other,
 				$apply_data['regist_time']
 			);
@@ -258,7 +259,7 @@ class Apply extends MY_Controller
 						'from'		=> $this->conf_mail['management_to_customer']['from'],
 						'from_name'	=> $this->conf_mail['management_to_customer']['from_name'],
 						'to'		=> $apply_data['email'],
-						'subject'	=> 'ICTツールの資料を発送いたしました。',
+						'subject'	=> '資料送付・無料相談のご案内/中央教育研究所株式会社',
 						'message'	=> $mail_body
 					);
 
@@ -285,6 +286,7 @@ class Apply extends MY_Controller
 					$other = str_replace("\r\n", "__", $other);
 					$other = str_replace("\r", "__", $other);
 					$other = str_replace("\n", "__", $other);
+					$know = !empty($apply_data['know']) ? $this->conf['know'][$apply_data['know']] : '';
 
 					$csv_str = '"' .
 						$apply_data['apply_id'] . '","' .
@@ -298,7 +300,7 @@ class Apply extends MY_Controller
 						$apply_data['addr2'] . '","' .
 						$apply_data['tel'] . '","' .
 						$apply_data['email'] . '","' .
-						$this->conf['know'][$apply_data['know']] . '","' .
+						$know . '","' .
 						$other . '","' .
 						$apply_data['regist_time'] . '"';
 

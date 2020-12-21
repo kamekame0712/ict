@@ -89,7 +89,7 @@ class Complete extends MY_Controller
 				'from'		=> $this->conf_mail['management_to_customer']['from'],
 				'from_name'	=> $this->conf_mail['management_to_customer']['from_name'],
 				'to'		=> $email,
-				'subject'	=> 'ICTツールの資料をご請求いただき、ありがとうございます。',
+				'subject'	=> '資料のご請求ありがとうございます/中央教育研究所株式会社',
 				'message'	=> $mail_body
 			);
 
