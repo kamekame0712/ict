@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="col-md-8">
-					<?= $CONF['pref'][$PDATA['pref']] ?><? $PDATA['addr1'] ?><? $PDATA['addr2'] ?>
+					<?= $CONF['pref'][$PDATA['pref']] ?><?= $PDATA['addr1'] ?><?= $PDATA['addr2'] ?>
 				</div>
 			</div> <!-- end of .row -->
 
