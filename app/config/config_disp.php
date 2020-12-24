@@ -69,6 +69,12 @@ $config['disp'] = array(
 		'9'		=> 'その他'
 	),
 
+	'flg_processed' => array(
+		'1'		=> '未処理',
+		'8'		=> 'キャンセル',
+		'9'		=> '処理済'
+	),
+
 	'product'	=> array(
 		'1'		=> array(
 			''		=> '選択してください',

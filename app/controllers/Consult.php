@@ -32,7 +32,7 @@ class Consult extends MY_Controller
 		}
 
 		$view_data = array(
-			'ADATA'		=> $apply_data[0],
+			'ADATA'		=> !empty($apply_data) ? $apply_data[0] : array(),
 			'CONF'		=> $this->conf
 		);
 

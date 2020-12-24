@@ -321,5 +321,23 @@ class Apply extends MY_Controller
 		$this->ajax_out(json_encode($ret_val));
 	}
 
+	public function ajax_change_status()
+	{
+		$post_data = $this->input->post();
+		$apply_id = isset($post_data['apply_id']) ? $post_data['apply_id'] : '';
+		$flg_processed = isset($post_data['flg_processed']) ? $post_data['flg_processed'] : '';
 
+		$ret_val = array();
+
+		if( $apply_id != '' && $flg_processed != '' ) {
+			$update_data = array(
+				'flg_processed'	=> $flg_processed,
+				'update_time'	=> date('Y-m-d H:i:s')
+			);
+
+			$this->m_apply->update(array('apply_id' => $apply_id), $update_data);
+		}
+
+		$this->ajax_out(json_encode($ret_val));
+	}
 }

@@ -198,7 +198,7 @@
 																		<?php if( $val['flg_processed'] == '1' ): ?>
 																			<span class="text-danger">未処理</span>
 																		<?php else: ?>
-																			処理済
+																			<?= $CONF['flg_processed'][$val['flg_processed']] ?>
 																		<?php endif; ?>
 																	</td>
 																	<td><?= $CONF['form_type'][$val['type']] ?></td>
