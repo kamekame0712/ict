@@ -13,6 +13,8 @@ class Form2 extends MY_Controller
 
 	public function index()
 	{
+		$this->set_ref('12');
+
 		$view_data = array(
 			'type'	=> '2',
 			'CONF'	=> $this->conf

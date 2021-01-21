@@ -13,6 +13,8 @@ class Form3 extends MY_Controller
 
 	public function index()
 	{
+		$this->set_ref('13');
+
 		$view_data = array(
 			'type'	=> '3',
 			'CONF'	=> $this->conf

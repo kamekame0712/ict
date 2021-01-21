@@ -20,6 +20,7 @@ class Consult extends MY_Controller
 
 	public function index()
 	{
+		$this->set_ref('98');
 		$this->load->view('consult/error');
 	}
 
@@ -29,6 +30,10 @@ class Consult extends MY_Controller
 		$view_page = 'form';
 		if( empty($apply_data) || count($apply_data) >= 2 ) {
 			$view_page = 'error';
+			$this->set_ref('99');
+		}
+		else {
+			$this->set_ref('2' . $apply_data[0]['type']);
 		}
 
 		$view_data = array(

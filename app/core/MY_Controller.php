@@ -20,6 +20,25 @@ class MY_Controller extends CI_Controller
 	/*    各コントローラー共通の関数         */
 	/*                                       */
 	/*****************************************/
+	// アクセスページのログを残す
+	protected function set_ref($type = '00')
+	{
+		// モデルロード
+		$this->load->model('m_referer');
+
+		$now = date('Y-m-d H:i:s');
+		$insert_data = array(
+			'type'			=> $type,
+			'remote_addr'	=> $this->input->server('REMOTE_ADDR'),
+			'user_agent'	=> $this->input->server('HTTP_USER_AGENT'),
+			'regist_time'	=> $now,
+			'update_time'	=> $now,
+			'status'		=> '0'
+		);
+
+		$this->m_referer->insert($insert_data);
+	}
+
 	// ログイン済みチェック（管理画面）
 	protected function chk_logged_in_admin()
 	{

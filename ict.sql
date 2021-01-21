@@ -55,6 +55,18 @@ CREATE TABLE `t_consult` (
   PRIMARY KEY (consult_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_referer` (
+  `referer_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `type` varchar(2) NOT NULL COMMENT 'フォーム番号 11:学習請求,12:4技能請求,21:学習問合,22:4技能問合',
+  `remote_addr` varchar(64) DEFAULT NULL COMMENT '$_SERVER[REMOTE_ADDR]',
+  `user_agent` varchar(256) DEFAULT NULL COMMENT '$_SERVER[HTTP_USER_AGENT]',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (referer_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 INSERT INTO `t_admin` (`admin_id`, `email`, `password`, `name`, `regist_time`, `update_time`, `status`) VALUES
