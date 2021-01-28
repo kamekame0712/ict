@@ -67,7 +67,7 @@ class Consult extends MY_Controller
 		}
 
 		if( $hope_date == '3' ) {
-			$this->form_validation->set_rules('other_hope_date', 'その他の商品名', 'required');
+			$this->form_validation->set_rules('other_hope_date', 'ご希望の日程', 'required');
 		}
 
 		if( $this->form_validation->run() == FALSE ) {

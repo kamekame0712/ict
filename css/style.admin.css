@@ -123,3 +123,11 @@ ul.pagination > li:last-child > span {
     transform: translateX(-50%);
 }
 /* #endregion 共通 */
+
+/* #region ダウンロード */
+.btn-dl {
+    font-size: 30px;
+    line-height: 35px;
+    padding: 15px 40px;
+}
+/* #endregion ダウンロード */

@@ -42,6 +42,13 @@
 													</tr>
 
 													<tr>
+														<td><a href="<?= site_url('admin/dl') ?>"><i class="fas fa-download"></i>&nbsp;ダウンロード</a></td>
+														<td>
+															資料請求一覧、無料相談一覧、各フォームへのアクセス状況のダウンロードが行えます。
+														</td>
+													</tr>
+
+													<tr>
 														<td><a href="<?= site_url('admin/manage') ?>"><i class="fas fa-user-tie"></i>&nbsp;管理者管理</a></td>
 														<td>
 															管理者の登録、修正、削除が行えます。
