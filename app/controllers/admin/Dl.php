@@ -179,11 +179,17 @@ class Dl extends MY_Controller
 					case '12':
 						$type = '資料請求フォーム（英語4技能のデジタル化）';
 						break;
+					case '13':
+						$type = '資料請求フォーム（教室とご家庭をつなげるには）';
+						break;
 					case '21':
 						$type = '無料相談フォーム（はじめてのオンライン学習）';
 						break;
 					case '22':
 						$type = '無料相談フォーム（英語4技能のデジタル化）';
+						break;
+					case '23':
+						$type = '無料相談フォーム（教室とご家庭をつなげるには）';
 						break;
 				}
 

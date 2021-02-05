@@ -49,7 +49,7 @@
 															</div>
 														</div>
 
-														<div class="col-4">
+														<div class="col-8">
 															<div class="form-group">
 																<div class="control-label">フォーム種別</div>
 
