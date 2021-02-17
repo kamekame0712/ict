@@ -68,6 +68,11 @@
 										</tr>
 
 										<tr>
+											<th>自由記述</th>
+											<td><?= nl2br($ADATA['note']) ?></td>
+										</tr>
+
+										<tr>
 											<th>申請日時</th>
 											<td><?= $ADATA['regist_time'] ?></td>
 										</tr>

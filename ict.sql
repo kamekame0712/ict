@@ -24,6 +24,7 @@ CREATE TABLE `t_apply` (
   `email` varchar(256) NOT NULL COMMENT 'Eメールアドレス',
   `know` varchar(1) NOT NULL COMMENT 'いつ知ったか',
   `other` varchar(128) DEFAULT NULL COMMENT 'その他の詳細',
+  `note` text DEFAULT '' COMMENT '自由記述',
   `flg_processed` varchar(1) DEFAULT '1' COMMENT '処理済みフラグ 1:未処理 8:キャンセル 9:処理済み',
   `param` varchar(32) DEFAULT NULL COMMENT '問い合わせパラメーター',
   `regist_time` datetime NOT NULL COMMENT '登録日',
@@ -32,6 +33,9 @@ CREATE TABLE `t_apply` (
 
   PRIMARY KEY (apply_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ALTER TABLE `t_apply` ADD `note` text DEFAULT '' COMMENT '自由記述' AFTER `other`;
+
 
 CREATE TABLE `t_consult` (
   `consult_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',

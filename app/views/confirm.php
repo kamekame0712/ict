@@ -105,6 +105,16 @@
 				</div>
 			</div> <!-- end of .row -->
 
+			<div class="row form-item">
+				<div class="col-md-4">
+					<div class="question">自由記述</div>
+				</div>
+
+				<div class="col-md-8">
+					<?= nl2br($PDATA['note']) ?>
+				</div>
+			</div> <!-- end of .row -->
+
 			<?php echo form_open('complete', array('id' => 'frm_confirm')); ?>
 				<?php echo form_hidden($PDATA); ?>
 

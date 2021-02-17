@@ -188,6 +188,21 @@
 					</div>
 				</div> <!-- end of .row -->
 
+				<div class="row form-item">
+					<div class="col-md-4">
+						<div class="question">自由記述</div>
+					</div>
+
+					<div class="col-md-8">
+						<?php echo form_textarea(array(
+							'name'			=> 'note',
+							'value'			=> set_value('note', ''),
+							'placeholder'	=> 'ご意見・ご要望等ございましたら、ご入力ください。'
+						)); ?>
+						<?php echo form_error('note'); ?>
+					</div>
+				</div> <!-- end of .row -->
+
 				<div class="agreement">
 					<a href="javascript:void(0);" data-featherlight="#privacy" class="">個人情報の取扱い</a>に同意してお進みください
 				</div>

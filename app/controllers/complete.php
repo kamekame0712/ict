@@ -46,6 +46,7 @@ class Complete extends MY_Controller
 		$email = isset($post_data['email']) ? $post_data['email'] : '';
 		$know = isset($post_data['know']) ? $post_data['know'] : '';
 		$other = isset($post_data['other']) ? $post_data['other'] : '';
+		$note = isset($post_data['note']) ? $post_data['note'] : '';
 
 		$now = date('Y-m-d H:i:s');
 		$insert_data = array(
@@ -61,6 +62,7 @@ class Complete extends MY_Controller
 			'email'			=> $email,
 			'know'			=> $know,
 			'other'			=> $other,
+			'note'			=> $note,
 			'regist_time'	=> $now,
 			'update_time'	=> $now,
 			'status'		=> '0'
@@ -80,7 +82,8 @@ class Complete extends MY_Controller
 				'address'		=> $this->conf['pref'][$pref] . $addr1 . $addr2,
 				'tel'			=> $tel,
 				'email'			=> $email,
-				'know'			=> $questionnaire
+				'know'			=> $questionnaire,
+				'note'			=> $note
 			);
 
 			// お客様宛

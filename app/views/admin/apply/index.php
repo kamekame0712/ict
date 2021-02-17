@@ -172,6 +172,7 @@
 																<th>未/済</th>
 																<th>フォーム種別</th>
 																<th>塾名</th>
+																<th>自由記述</th>
 																<th>住所</th>
 																<th>電話番号</th>
 																<th>請求日時</th>
@@ -203,6 +204,7 @@
 																	</td>
 																	<td><?= $CONF['form_type'][$val['type']] ?></td>
 																	<td><?= $val['juku_name'] ?></td>
+																	<td><?= mb_strimwidth($val['note'], 0, 11, '...') ?></td>
 																	<td><?= $CONF['pref'][$val['pref']] ?><?= $val['addr1'] ?>&nbsp;<?= $val['addr2'] ?></td>
 																	<td><?= $val['tel'] ?></td>
 																	<td><?= $val['regist_time'] ?></td>
